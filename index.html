@@ -5,9 +5,13 @@
     <title>Simple Calculator</title>
 </head>
 <body>
-    <br>
+    <div class="main p-3">
     <h1>Simple Calculator</h1>
     <br>
+    <h3 id="output-heading">First Number</h3>
+    <input type="text" class="form-control w-25" id="num1" placeholder="Enter First Number"><br>
+    <h3 id="output-heading">Second Number</h3>
+    <input type="text" class="form-control w-25" id="num2" placeholder="Enter Second Number"><br>
     <button class="btn btn-primary" onclick="add()">Add</button>
     <button class="btn btn-dark" onclick="subtract()">Subtract</button>
     <button class="btn btn-success" onclick="multiply()">Multiply</button>
@@ -15,32 +19,32 @@
     <br><br>
     
     <h1 id="resultHeading">Result: </h1>
-
+</div>
     <script>
         function add() {
-            let num1 = parseFloat(prompt("Enter the first number:"));
-            let num2 = parseFloat(prompt("Enter the second number:"));
+            let num1 = parseInt( document.getElementById("num1").value);
+            let num2 = parseInt( document.getElementById("num2").value);
             let result = num1 + num2;
             document.getElementById("resultHeading").innerText = `Result: ${result}`;
         }
 
         function subtract() {
-            let num1 = parseFloat(prompt("Enter the first number:"));
-            let num2 = parseFloat(prompt("Enter the second number:"));
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
             let result = num1 - num2;
             document.getElementById("resultHeading").innerText = `Result: ${result}`;
         }
 
         function multiply() {
-            let num1 = parseFloat(prompt("Enter the first number:"));
-            let num2 = parseFloat(prompt("Enter the second number:"));
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
             let result = num1 * num2;
             document.getElementById("resultHeading").innerText = `Result: ${result}`;
         }
 
         function divide() {
-            let num1 = parseFloat(prompt("Enter the first number:"));
-            let num2 = parseFloat(prompt("Enter the second number:"));
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
             if (num2 === 0) {
                 document.getElementById("resultHeading").innerText = "Result: Cannot divide by zero!";
             } else {
@@ -51,3 +55,4 @@
     </script>
 </body>
 </html>
+
